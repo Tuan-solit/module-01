@@ -6,33 +6,40 @@
     <title>From basic</title>
   </head>
   <body>
-    <form style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" action="https://www.youtube.com/">
+    <form
+      style="
+        font-family:
+          &quot;Lucida Sans&quot;, &quot;Lucida Sans Regular&quot;,
+          &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Geneva,
+          Verdana, sans-serif;
+      "
+      action="https://www.youtube.com/"
+    >
       <h1>Order Form</h1>
       <h4>What would you like to buy?</h4>
-      <select name="order" style="width: 150px;">
+      <select name="order" style="width: 150px">
         <option value="A">A</option>
         <option value="B">B</option>
         <option value="C">C</option>
         <option value="D">D</option>
       </select>
       <h4>How many would you like to order?</h4>
-      <input type="radio" name="quantity" value="1" />1 - $10 <br/>
-      <input type="radio" name="quantity" value="2" />2 - $20 <br/>
-      <input type="radio" name="quantity" value="3" />3 - $30 <br/>
-      <input type="radio" name="quantity" value="4" />4 - $40 <br/>
-      <h4>Name</h4>
-      <input type="text" name="firstname" placeholder="First name">
-      <input type="text" name="lastname" placeholder="Last name">
+      <input type="radio" name="quantity" value="1" />1 - $10 <br />
+      <input type="radio" name="quantity" value="2" />2 - $20 <br />
+      <input type="radio" name="quantity" value="3" />3 - $30 <br />
+      <input type="radio" name="quantity" value="4" />4 - $40 <br />
+      <h4>Name <span style="color: red">*</span></h4>
+      <input type="text" name="firstname" placeholder="First name" size="15" />
+      <input type="text" name="lastname" placeholder="Last name" size="15" />
       <h4>Email</h4>
-      <input type="text" name="email" style="width: 300px;">
+      <input type="text" name="email" size="35" />
       <h4>Phone</h4>
-      <input type="text" name="phone" maxlength="4" style="width: 50px;">
+      <input type="text" name="phone" maxlength="4" style="width: 50px" />
       <span>-</span>
-      <input type="text" name="phone" maxlength="3" style="width: 50px;">
+      <input type="text" name="phone" maxlength="3" style="width: 50px" />
       <span>-</span>
-      <input type="text" name="phone" maxlength="3" style="width: 50px;">
-      <br/>
-      <input type="submit" value="Submit">
+      <input type="text" name="phone" maxlength="3" style="width: 50px" />
+      <p><input type="button" name="btSubmit" value="Submit" /></p>
     </form>
   </body>
 </html>
