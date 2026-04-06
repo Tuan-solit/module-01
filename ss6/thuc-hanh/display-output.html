@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showMess()">Click Me!</button>
+    <script>
+        function showMess(){
+            alert('Xin chao');
+        }
+        
+    </script>
+
+    <div id="hi"></div>
+    <button onclick="showMess()">Click Me!</button>
+    <script>
+        function showMess(){
+            document.getElementById("hi").innerHTML= "XIN CHAO"
+        }
+    </script>
+
+    <div id="hi"></div>
+    <button onclick="showMess()">Click Me!</button>
+    <script>
+        function showMess(){
+            document.write("hello")
+        }
+    </script>
+
+    <div id="hi"></div>
+    <button onclick="showMess()">Click Me!</button>
+    <script src="test.js"></script>
+  </body>
+</html>

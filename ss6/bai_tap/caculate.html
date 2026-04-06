@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caculate</title>
+  </head>
+  <body>
+    <h1>Tính chu vi, diện tích hình chữ nhật</h1>
+    <span>Nhập chiều dài</span>
+    <input type="number" id="height" value="h" />
+    <span>Nhập chiều rộng</span>
+    <input type="number" id="width" value="w" /> <br />
+    <button onclick="caculate()">Tính</button>
+    <script>
+      function caculate() {
+        let w = parseFloat(document.getElementById("width").value);
+        let h = parseFloat(document.getElementById("height").value);
+        if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) {
+          alert("Nhập không hợp lệ");
+          return;
+        }
+        let c = (w + h) * 2;
+        let s = w * h;
+        alert(
+          "Chu vi hình chữ nhật là: " +
+            c +
+            "\n" +
+            "Diện tích hình chữ nhật là: " +
+            s,
+        );
+      }
+    </script>
+  </body>
+</html>
