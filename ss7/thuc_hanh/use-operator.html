@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      inputWidth = prompt("Nhap chieu rong");
+      inputHeight = prompt("Nhap chieu dai");
+      let w = parseInt(inputWidth);
+      let h = parseInt(inputHeight);
+      if (w < 0 || h < 0) {
+        alert("Phai la so duong");
+      } else if (!isNaN(w) && !isNaN(h)) {
+        let area = h * w;
+        document.write("Dien tich hinh chu nhat la = " + area);
+      } else {
+        alert("Nhap khong hop le");
+      }
+    </script>
+  </body>
+</html>
