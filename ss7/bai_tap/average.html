@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Nhập điểm số cho học sinh</h1>
+    <span style="margin-right: 15px">Vật lý: </span>
+    <input type="number" id="phy" style="margin: 5px" />
+    <br />
+    <span>Hóa học: </span>
+    <input type="number" id="che" style="margin: 5px" />
+    <br />
+    <span>Sinh học: </span>
+    <input type="number" id="bio" style="margin: 5px" />
+    <br />
+    <button onclick="calculate()">Nhập điểm</button>
+    <script>
+      function calculate() {
+        let p = parseFloat(document.getElementById("phy").value);
+        let c = parseFloat(document.getElementById("che").value);
+        let b = parseFloat(document.getElementById("bio").value);
+        console.log(p);
+        console.log(c);
+        console.log(b);
+        if (
+          !isNaN(p) &&
+          !isNaN(c) &&
+          !isNaN(b) &&
+          10 >= p &&
+          p >= 0 &&
+          10 >= c &&
+          c >= 0 &&
+          10 >= b &&
+          b >= 0
+        ) {
+          let average = (p + c + b) / 3;
+          let sum = p + c + b;
+          alert("Điểm trung bình: " + average + "\n" + "Tổng điểm: " + sum);
+        } else {
+          alert("Nhập không hợp lệ");
+        }
+      }
+    </script>
+  </body>
+</html>
