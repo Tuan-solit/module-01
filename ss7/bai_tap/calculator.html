@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CALCULATOR</h1>
+    <input
+      type="number"
+      id="num1"
+      style="margin: 5px"
+      placeholder="nhập số thứ nhất"
+    />
+    <input
+      type="number"
+      id="num2"
+      style="margin: 5px"
+      placeholder="nhập số thứ hai"
+    />
+    <br />
+    <button onclick="calculate('+')">Cộng</button>
+    <button onclick="calculate('-')">Trừ</button>
+    <button onclick="calculate('*')">Nhân</button>
+    <button onclick="calculate('/')">Chia</button>
+    <p id="res">Result:</p>
+    <script>
+      function calculate(operator) {
+        let a = parseFloat(document.getElementById("num1").value);
+        let b = parseFloat(document.getElementById("num2").value);
+        let resElement = document.getElementById("res");
+        let rs;
+        if (isNaN(a) || isNaN(b)) {
+          alert("Vui lòng nhập đủ 2 số");
+          return;
+        }
+        switch (operator) {
+          case "+":
+            rs = a + b;
+            resElement.innerHTML = "Result: " + rs;
+            break;
+          case "-":
+            rs = a - b;
+            resElement.innerHTML = "Result: " + rs;
+            break;
+          case "*":
+            rs = a * b;
+            resElement.innerHTML = "Result: " + rs;
+            break;
+          case "/":
+            if (b == 0) {
+              alert("Không thể chia cho 0");
+            } else {
+              rs = a / b;
+              resElement.innerHTML = "Result: " + rs;
+            }
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
