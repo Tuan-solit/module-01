@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert</title>
+  </head>
+  <body>
+    <h1>Công cụ chuyển đổi từ Celsius sang Fahrenheit</h1>
+    <span style="margin-right: 15px">độ C(Celsius): </span>
+    <input type="number" id="c" style="margin: 5px" />
+    <br />
+    <button onclick="convert()">Chuyển đổi</button>
+    <script>
+      function convert() {
+        let c = parseFloat(document.getElementById("c").value);
+        let f;
+        if (!isNaN(c)) {
+          f = (9 * c) / 5 + 32;
+          alert("độ F(Fahrenheit): " + f);
+        } else {
+          alert("Nhập không hợp lệ!");
+        }
+      }
+    </script>
+  </body>
+</html>
