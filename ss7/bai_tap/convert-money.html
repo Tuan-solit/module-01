@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+      </tr>
+      <tr>
+        <td>
+          <input type="number" id="amount" />
+        </td>
+        <td>
+          <select name="from" id="from">
+            <option value="1">VND</option>
+            <option value="2">USD</option>
+          </select>
+        </td>
+        <td>
+          <select name="to" id="to">
+            <option value="2">USD</option>
+            <option value="1">VND</option>
+          </select>
+        </td>
+        <td>
+          <button onclick="convert()">Convert</button>
+        </td>
+      </tr>
+    </table>
+    <p id="res">Result:</p>
+    <script>
+      function convert() {
+        let mn = parseInt(document.getElementById("amount").value);
+        let fr = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let rs = document.getElementById("res");
+        let res;
+        if (!isNaN(mn) && mn > 0) {
+          if (fr == "1" && to == "2") {
+            res = mn / 26000;
+            rs.innerHTML = "Result: " + res + " $";
+          } else if (fr == "1" && to == "1") {
+            res = mn;
+            rs.innerHTML = "Result: " + res + " vnd";
+          } else if (fr == "2" && to == "1") {
+            res = mn * 26000;
+            rs.innerHTML = "Result: " + res + " vnd";
+          } else {
+            res = mn;
+            rs.innerHTML = "Result: " + res + " $";
+          }
+        } else {
+          alert("Nhập không hợp lệ");
+        }
+      }
+    </script>
+  </body>
+</html>
