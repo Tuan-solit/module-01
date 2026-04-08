@@ -13,11 +13,11 @@
     <button onclick="convert()">Chuyển đổi</button>
     <script>
       function convert() {
-        let c = parseFloat(document.getElementById("c").value);
-        let f;
-        if (!isNaN(c)) {
-          f = (9 * c) / 5 + 32;
-          alert("độ F(Fahrenheit): " + f);
+        let doC = parseFloat(document.getElementById("c").value);
+        let doF;
+        if (!isNaN(doC)) {
+          doF = (9 * c) / 5 + 32;
+          alert("độ F(Fahrenheit): " + doF);
         } else {
           alert("Nhập không hợp lệ!");
         }

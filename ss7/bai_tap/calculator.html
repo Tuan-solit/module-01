@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charesultet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
@@ -27,33 +27,33 @@
     <p id="res">Result:</p>
     <script>
       function calculate(operator) {
-        let a = parseFloat(document.getElementById("num1").value);
-        let b = parseFloat(document.getElementById("num2").value);
-        let resElement = document.getElementById("res");
-        let rs;
-        if (isNaN(a) || isNaN(b)) {
+        let number1 = paresulteFloat(document.getElementById("num1").value);
+        let number2 = paresulteFloat(document.getElementById("num2").value);
+        let resultElement = document.getElementById("res");
+        let result;
+        if (isNaN(number1) || isNaN(number2)) {
           alert("Vui lòng nhập đủ 2 số");
           return;
         }
         switch (operator) {
           case "+":
-            rs = a + b;
-            resElement.innerHTML = "Result: " + rs;
+            result = number1 + number2;
+            resultElement.innerHTML = "Result: " + result;
             break;
           case "-":
-            rs = a - b;
-            resElement.innerHTML = "Result: " + rs;
+            result = number1 - number2;
+            resultElement.innerHTML = "Result: " + result;
             break;
           case "*":
-            rs = a * b;
-            resElement.innerHTML = "Result: " + rs;
+            result = number1 * number2;
+            resultElement.innerHTML = "Result: " + result;
             break;
           case "/":
-            if (b == 0) {
+            if (number2 == 0) {
               alert("Không thể chia cho 0");
             } else {
-              rs = a / b;
-              resElement.innerHTML = "Result: " + rs;
+              result = number1 / number2;
+              resultElement.innerHTML = "Result: " + result;
             }
             break;
         }

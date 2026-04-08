@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charesultElementet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money</title>
   </head>
@@ -9,7 +9,7 @@
     <table>
       <tr>
         <th>Amount</th>
-        <th>From Currency</th>
+        <th>from Currency</th>
         <th>To Currency</th>
       </tr>
       <tr>
@@ -36,24 +36,24 @@
     <p id="res">Result:</p>
     <script>
       function convert() {
-        let mn = parseInt(document.getElementById("amount").value);
-        let fr = document.getElementById("from").value;
+        let amount = paresultElementeInt(document.getElementById("amount").value);
+        let from = document.getElementById("from").value;
         let to = document.getElementById("to").value;
-        let rs = document.getElementById("res");
-        let res;
-        if (!isNaN(mn) && mn > 0) {
-          if (fr == "1" && to == "2") {
-            res = mn / 26000;
-            rs.innerHTML = "Result: " + res + " $";
-          } else if (fr == "1" && to == "1") {
-            res = mn;
-            rs.innerHTML = "Result: " + res + " vnd";
-          } else if (fr == "2" && to == "1") {
-            res = mn * 26000;
-            rs.innerHTML = "Result: " + res + " vnd";
+        let resultElement = document.getElementById("res");
+        let result;
+        if (!isNaN(amount) && amount > 0) {
+          if (from == "1" && to == "2") {
+            result = amount / 26000;
+            resultElement.innerHTML = "Result: " + res + " $";
+          } else if (from == "1" && to == "1") {
+            result = amount;
+            resultElement.innerHTML = "Result: " + res + " vnd";
+          } else if (from == "2" && to == "1") {
+            result = amount * 26000;
+            resultElement.innerHTML = "Result: " + res + " vnd";
           } else {
-            res = mn;
-            rs.innerHTML = "Result: " + res + " $";
+            result = amount;
+            resultElement.innerHTML = "Result: " + res + " $";
           }
         } else {
           alert("Nhập không hợp lệ");

@@ -19,25 +19,22 @@
     <button onclick="calculate()">Nhập điểm</button>
     <script>
       function calculate() {
-        let p = parseFloat(document.getElementById("phy").value);
-        let c = parseFloat(document.getElementById("che").value);
-        let b = parseFloat(document.getElementById("bio").value);
-        console.log(p);
-        console.log(c);
-        console.log(b);
+        let physic = parseFloat(document.getElementById("phy").value);
+        let chemistry = parseFloat(document.getElementById("che").value);
+        let biology = parseFloat(document.getElementById("bio").value);
         if (
-          !isNaN(p) &&
-          !isNaN(c) &&
-          !isNaN(b) &&
-          10 >= p &&
-          p >= 0 &&
-          10 >= c &&
-          c >= 0 &&
-          10 >= b &&
-          b >= 0
+          !isNaN(physic) &&
+          !isNaN(chemistry) &&
+          !isNaN(biology) &&
+          10 >= physic &&
+          physic >= 0 &&
+          10 >= chemistry &&
+          chemistry >= 0 &&
+          10 >= biology &&
+          biology >= 0
         ) {
-          let average = (p + c + b) / 3;
-          let sum = p + c + b;
+          let average = (physic + chemistry + biology) / 3;
+          let sum = physic + chemistry + biology;
           alert("Điểm trung bình: " + average + "\n" + "Tổng điểm: " + sum);
         } else {
           alert("Nhập không hợp lệ");

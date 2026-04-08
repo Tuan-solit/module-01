@@ -13,11 +13,11 @@
     <button onclick="convert()">Tính</button>
     <script>
       function convert() {
-        let r = parseFloat(document.getElementById("r").value);
-        let c,s;
-        if (!isNaN(r)&& r>=0) {
-          c = 2 * r * 3.14;
-          s = r * r * 3.14;
+        let banKinh = parseFloat(document.getElementById("r").value);
+        let chuVi,dienTich;
+        if (!isNaN(banKinh)&& banKinh>=0) {
+          chuVi = 2 * banKinh * 3.14;
+          dienTich = banKinh * banKinh * 3.14;
           alert("chu vi hình tròn: " + c+"\n"+ "diện tích hình tròn: "+ s);
         } else {
           alert("Nhập không hợp lệ!");

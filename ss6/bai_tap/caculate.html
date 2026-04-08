@@ -14,20 +14,20 @@
     <button onclick="caculate()">Tính</button>
     <script>
       function caculate() {
-        let w = parseFloat(document.getElementById("width").value);
-        let h = parseFloat(document.getElementById("height").value);
-        if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) {
+        let width = parseFloat(document.getElementById("width").value);
+        let height = parseFloat(document.getElementById("height").value);
+        if (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
           alert("Nhập không hợp lệ");
           return;
         }
-        let c = (w + h) * 2;
-        let s = w * h;
+        let chuVi = (width + height) * 2;
+        let dienTich = width * height;
         alert(
           "Chu vi hình chữ nhật là: " +
-            c +
+            chuVi +
             "\n" +
             "Diện tích hình chữ nhật là: " +
-            s,
+            dienTich,
         );
       }
     </script>
