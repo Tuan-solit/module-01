@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let weight = parseFloat(prompt("Enter your weight(kg)"));
+        let height = parseFloat(prompt("Enter your height(m)"));
+        if (!isNaN(weight)&&!isNaN(height)){
+            if(weight > 0 && height>0){
+                let bMI= weight / (height ** 2);
+                if (bMI<18.5){
+                    alert("Underweight");
+                }else if(bMI<25){
+                    alert("Normal");
+                }else if(bMI<30){
+                    alert("Overweight");
+                }else{
+                    alert("Obese");
+                }
+            }else{
+                alert("Weight and height must be greater than 0");
+            }
+        }else{
+            alert("Invalid input");
+        }
+    </script>
+</body>
+</html>
