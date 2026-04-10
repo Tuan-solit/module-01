@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let x = parseInt(prompt("Nhập cạnh x"));
+      let y = parseInt(prompt("Nhập cạnh y"));
+      let z = parseInt(prompt("Nhập cạnh z"));
+      if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {
+        if (x > 0 && y > 0 && z > 0) {
+          if (x + y > z && y + z > x && x + z > y) {
+            if (
+              x ** 2 + y ** 2 == z ** 2 ||
+              x ** 2 + z ** 2 == y ** 2 ||
+              y ** 2 + z ** 2 == x ** 2
+            ) {
+              alert("Đây là 3 cạnh của tam giác vuông");
+            } else {
+              alert("Đây chỉ là 3 cạnh của 1 tam giác");
+            }
+          } else {
+            alert("Đây không phải là cạnh của 1 tam giác");
+          }
+        } else {
+          alert("Đây không phải là cạnh của 1 tam giác");
+        }
+      } else {
+        alert("Nhập không hợp lệ");
+      }
+    </script>
+  </body>
+</html>

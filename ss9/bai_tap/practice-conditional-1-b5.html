@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let baiKTra = parseFloat(prompt("Nhập điểm bài kiểm tra"));
+      let thiGiuaKy = parseFloat(prompt("Nhập điểm thi giữa kỳ"));
+      let thiCuoiky = parseFloat(prompt("Nhập điểm thi cuối kỳ"));
+      if (!isNaN(baiKTra) && !isNaN(thiGiuaKy) && !isNaN(thiCuoiky)) {
+        if (
+          baiKTra >= 0 &&
+          baiKTra <= 10 &&
+          thiGiuaKy >= 0 &&
+          thiGiuaKy <= 10 &&
+          thiCuoiky >= 0 &&
+          thiCuoiky <= 10
+        ) {
+          let diemTB = (baiKTra + thiGiuaKy * 2 + thiCuoiky * 3) / 6;
+          if (diemTB >= 8) {
+            alert("Xếp loại giỏi");
+          } else if (diemTB >= 6.5) {
+            alert("Xếp loại khá");
+          } else if (diemTB >= 3.5) {
+            alert("Xếp loại trung bình");
+          } else {
+            alert("Xếp loại yếu");
+          }
+        } else {
+          alert("Điểm không hợp lệ");
+        }
+      } else {
+        alert("Invalid Input");
+      }
+    </script>
+  </body>
+</html>

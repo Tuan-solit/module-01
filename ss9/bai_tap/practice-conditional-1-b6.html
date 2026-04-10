@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let sales = parseFloat(prompt("Nhập doanh số bán hàng"));
+      let commission = 0;
+      if (!isNaN(sales)) {
+        if (sales > 0) {
+          if (sales <= 50000000) {
+            commission = (sales * 3) / 100;
+          } else if (sales <= 100000000) {
+            commission = (sales * 5) / 100;
+          } else {
+            commission = (sales * 7) / 100;
+          }
+          alert("Hoa hồng nhận được là " + commission + "vnd");
+        } else {
+          alert("Làm ăn thua lỗ");
+        }
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

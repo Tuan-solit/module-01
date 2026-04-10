@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let thuNhapCN = parseInt(prompt("Nhập thu nhập cá nhân"));
+      let thueTNCN = 0;
+      if (!isNaN(thuNhapCN) && thuNhapCN > 0) {
+        if (thuNhapCN <= 10000000) {
+          thueTNCN = thuNhapCN * 0.05;
+        } else if (thuNhapCN <= 30000000) {
+          thueTNCN = thuNhapCN * 0.1 - 500000;
+        } else if (thuNhapCN <= 60000000) {
+          thueTNCN = thuNhapCN * 0.2 - 3500000;
+        } else if (thuNhapCN <= 100000000) {
+          thueTNCN = thuNhapCN * 0.3 - 9500000;
+        } else {
+          thueTNCN = thuNhapCN * 0.35 - 14500000;
+        }
+        alert("Thuế thu nhập cá nhân của bạn = " + thueTNCN);
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

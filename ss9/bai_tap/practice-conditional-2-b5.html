@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Nhập cạnh a"));
+      let b = parseInt(prompt("Nhập cạnh b"));
+      if (!isNaN(a) && !isNaN(b) && a > 0 && b > 0) {
+        let s = (a * b) / 2;
+        alert("Diện tích hình tam giac vuong = " + s);
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

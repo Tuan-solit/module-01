@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let phiTB = 25000;
+      let thGianGoi = parseInt(prompt("Thời gian đã gọi trong tháng"));
+      let cuocGoi = 0;
+      let tongTien = 0;
+      if (!isNaN(thGianGoi) && thGianGoi > 0) {
+        if (thGianGoi <= 50) {
+          cuocGoi = thGianGoi * 600;
+        } else if (thGianGoi <= 200) {
+          cuocGoi = 50 * 600 + (thGianGoi - 50) * 400;
+        } else {
+          cuocGoi = 50 * 600 + 150 * 400 + (thGianGoi - 200) * 200;
+        }
+        tongTien = phiTB + cuocGoi;
+        alert("Tổng tiền cước điện thoại tháng này là " + tongTien + "vnd");
+      } else {
+        alert("Invalid Input");
+      }
+    </script>
+  </body>
+</html>

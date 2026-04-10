@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseFloat(prompt("Nhập a"));
+      let b = parseFloat(prompt("Nhập b"));
+      if (!isNaN(a) && !isNaN(b)) {
+        if (a != 0) {
+          let x = -(b / a);
+          alert(
+            "Phương trình " + a + "x " + " + " + b + " = 0 có nghiệm là " + x,
+          );
+        } else {
+          alert("a phải khác 0");
+        }
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

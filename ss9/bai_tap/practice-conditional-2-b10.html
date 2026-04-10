@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let chuDien = parseInt(prompt("Nhập tổng điện năng tiêu thụ(kWh)"));
+      let thueVAT,
+        tienDienChuaThue,
+        tongTien = 0;
+      if (!isNaN(chuDien) && chuDien > 0) {
+        if (chuDien <= 50) {
+          tienDienChuaThue = chuDien * 1984;
+        } else if (chuDien <= 100) {
+          tienDienChuaThue = 50 * 1984 + (chuDien - 50) * 2050;
+        } else if (chuDien <= 200) {
+          tienDienChuaThue = 50 * 1984 + 50 * 2050 + (chuDien - 100) * 2380;
+        } else if (chuDien <= 300) {
+          tienDienChuaThue =
+            50 * 1984 + 50 * 2050 + 100 * 2380 + (chuDien - 200) * 2998;
+        } else if (chuDien <= 400) {
+          tienDienChuaThue =
+            50 * 1984 +
+            50 * 2050 +
+            100 * 2380 +
+            100 * 2998 +
+            (chuDien - 300) * 3350;
+        } else {
+          tienDienChuaThue =
+            50 * 1984 +
+            50 * 2050 +
+            100 * 2380 +
+            100 * 2998 +
+            100 * 3350 +
+            (chuDien - 400) * 3460;
+        }
+        thueVAT = (tienDienChuaThue * 8) / 100;
+        tongTien = thueVAT + tienDienChuaThue;
+        alert("Tổng tiền điện tháng này là " + tongTien + " vnd");
+      } else {
+        alert("Nhap khong hop le");
+      }
+    </script>
+  </body>
+</html>

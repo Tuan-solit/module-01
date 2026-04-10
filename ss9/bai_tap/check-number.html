@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseInt(prompt("Nhập a"));
+      let b = parseInt(prompt("Nhập b"));
+      let c = parseInt(prompt("Nhập c"));
+      let d = parseInt(prompt("Nhập d"));
+      if (!isNaN(a) && !isNaN(b) && !isNaN(c) && !isNaN(d)) {
+        if (a > 0 && b > 0 && c > 0 && d > 0) {
+          if (a != b && a != c && a != d && b != c && b != d && c != d) {
+            if (a > b && a > c && a > d) {
+              if (b > c && b > d) {
+                alert(a + " là số lớn nhất" + "\n" + b + " là số lớn nhì");
+              } else if (c > b && c > d) {
+                alert(a + " là số lớn nhất" + "\n" + c + " là số lớn nhì");
+              } else {
+                alert(a + " là số lớn nhất" + "\n" + d + " là số lớn nhì");
+              }
+            } else if (b > a && b > c && b > d) {
+                if (a>c && a>d){
+                    alert(b + " là số lớn nhất"+ "\n"+ a+ " là số lớn nhì");
+                }else if(c>a&&c>d){
+                    alert(b + " là số lớn nhất"+ "\n"+ c+ " là số lớn nhì");
+                }else{
+                    alert(b + " là số lớn nhất"+ "\n"+ d+ " là số lớn nhì");
+                }
+            }else if(c>a&&c>b&&c>d){
+                if (a>b && a>d){
+                    alert(c + " là số lớn nhất"+ "\n"+ a+ " là số lớn nhì");
+                }else if(b>a&&b>d){
+                    alert(c + " là số lớn nhất"+ "\n"+ b+ " là số lớn nhì");
+                }else{
+                    alert(c + " là số lớn nhất"+ "\n"+ d+ " là số lớn nhì");
+                }
+            }else if(a>b&&a>c){
+                alert(d + " là số lớn nhất"+ "\n"+ a+ " là số lớn nhì");
+            }else if(b>a&&b>c){
+                alert(d + " là số lớn nhất"+ "\n"+ b+ " là số lớn nhì");
+            }else{
+                alert(d + " là số lớn nhất"+ "\n"+ c+ " là số lớn nhì")
+            }
+          }else{
+            alert("a,b,c,d phải khác nhau");
+          }
+        }else{
+            alert("a,b,c,d phải là số nguyên dương");
+        }
+      }else{
+        alert("Nhập không hợp lệ");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = parseFloat(prompt("Enter a"));
+      let b = parseFloat(prompt("Enter b"));
+      if (!isNaN(a) && !isNaN(b)) {
+        if (a % b == 0) {
+          alert("a is divisible by b");
+        } else {
+          alert("a is not divisible by b");
+        }
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Nhập a"));
+        let b = parseInt(prompt("Nhập b"));
+        let c = parseInt(prompt("Nhập c"));
+        let d = parseInt(prompt("Nhập d"));
+        let e = parseInt(prompt("Nhập e"));
+        if(!isNaN(a)&&!isNaN(b)&&!isNaN(c)&&!isNaN(d)&&!isNaN(e)){
+            if(a>0&&b>0&&c>0&&d>0&&e>0){
+                if(a!=b&&a!=c&&a!=d&&a!=e&&b!=c&&b!=d&&b!=e&&c!=d&&c!=e&&d!=e){
+                    if(check(a,b,c,d,e)){
+                        alert(a);
+                    }else if(check(b,a,c,d,e)){
+                        alert(b);
+                    }else if(check(c,a,b,d,e)){
+                        alert(c);
+                    }else if(check(d,a,b,c,e)){
+                        alert(d);
+                    }else{
+                        alert(e);
+                    }
+                }
+            }
+        }
+        function check(a,b,c,d,e){
+            let count1 = 0;
+            let count2 = 0;
+            if(a>b){
+                count1 ++;
+            }else{
+                count2 ++;
+            }
+            if(a>c){
+                count1 ++;
+            }else{
+                count2 ++;
+            }
+            if(a>d){
+                count1 ++;
+            }else{
+                count2 ++;
+            }
+            if(a>e){
+                count1 ++;
+            }else{
+                count2 ++;
+            }
+            return count1 == count2;
+        }
+    </script>
+</body>
+</html>
