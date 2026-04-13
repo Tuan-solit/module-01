@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="play()">Start</button>
+    <script>
+      function play() {
+        let min = parseInt(prompt("Số bạn muốn đoán trong khoảng từ "));
+        let max = parseInt(prompt("Số bạn muốn đoán trong khoảng từ " + min));
+        if (!isNaN(min) && !isNaN(max)) {
+          let random = Math.floor(Math.random() * (max - min + 1)) + min;
+          let number_check = parseInt(prompt("Nhập số bạn muốn đoán"));
+          if (!isNaN(number_check)) {
+            let count = 1;
+            while (number_check != random) {
+              if (count == 4) {
+                alert("Bạn đã hết số lần đoán");
+              } else if (number_check < random) {
+                alert("số cần đoán lớn hơn");
+              } else if (number_check > random) {
+                alert("số cần đoán nhỏ hơn");
+              }
+              count++;
+              number_check = parseInt(prompt("Nhập số bạn muốn đoán"));
+            }
+            alert("Chúc mừng bạn đã đúng");
+          } else {
+            alert("Invalid input");
+          }
+        } else {
+          alert("Invalid input");
+        }
+      }
+    </script>
+  </body>
+</html>
