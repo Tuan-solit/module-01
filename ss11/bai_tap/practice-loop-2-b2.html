@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = parseInt(prompt("Nhập số"));
+      let result = 1;
+      if (!isNaN(n) && n > 0) {
+        for (let i = 1; i <= n; i++) {
+          result =result* i ;
+        }
+        alert("Giai thừa của " + n + " = " + result);
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>
