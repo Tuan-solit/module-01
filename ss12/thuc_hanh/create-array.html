@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="item" />
+    <button onclick="add()">Add</button>
+    <button onclick="display()">Display</button>
+    <p>--------------------------------------------------------</p>
+    <div id="result"></div>
+    <script>
+      let array = [];
+      let result = document.getElementById("result");
+      function add() {
+        let item = document.getElementById("item").value;
+        array.push(item);
+      }
+      function display() {
+        let e = "";
+        for (let i = 0; i < array.length; i++) {
+          e += "Element " + i + "= " + array[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML = e;
+      }
+    </script>
+  </body>
+</html>
