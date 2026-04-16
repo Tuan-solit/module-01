@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập 1 dãy số");
+      let array = input.split(",");
+      let arrayNew =[];
+      let max = array[0];
+      let average = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (max < array[i]) {
+          max = array[i];
+        }
+        let element = Number(array[i]);
+        arrayNew.push(element);
+        average += arrayNew[i];
+      }
+      average = average/array.length;
+      console.log("giá trị lớn nhất là "+max);
+      console.log("giá trị trung bình của các phần tử trong mảng là "+average);
+      
+    </script>
+  </body>
+</html>

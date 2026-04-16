@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập 1 dãy 10 số");
+      let array = input.split(",");
+      console.log(array);
+      if (array.length == 10) {
+        array.sort(function (a, b) {
+          return b - a;
+        });
+        console.log(array);
+      } else if (array.length < 10) {
+        alert("chưa đủ 10 số");
+      } else {
+        alert("chỉ nhập 10 số thôi");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Bai 1
+        let myColor = ["Red","Green","White","Black"];
+        console.log(myColor.join());
+        
+        // Bai 2
+        let input = prompt("Input");
+        let array = input.split("");
+        let result = [array[0]];
+        for(let i =1;i<array.length;i++){
+            if(array[i-1]%2==0&&array[i]%2==0){
+                result.push("-"+ array[i]);
+            }else{
+                result.push(array[i]);
+            }
+        }
+        console.log(result.join(""));
+         
+        // Bai 3
+        let a = prompt("Input");
+        let b = [];
+        for(let i =0;i<a.length;i++){
+            let c = a[i];
+            if(c == c.toUpperCase()){
+                b.push(c.toLowerCase());
+            }else{
+                b.push(c.toUpperCase());
+            }
+        }console.log(b.join(""));
+        
+    </script>
+</body>
+</html>

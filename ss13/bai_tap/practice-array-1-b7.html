@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập 1 dãy 10 số");
+      let array = input.split(",");
+      let v = prompt("Nhập v");
+      if (array.length == 10) {
+        for (let i = 0; i < array.length; i++) {
+          if (v == array[i]) {
+            array.splice(i, 1);
+            array.push(0);
+          }
+        }
+        console.log(array);
+      } else if (array.length < 10) {
+        alert("chưa đủ 10 số");
+      } else {
+        alert("chỉ nhập 10 số thôi");
+      }
+    </script>
+  </body>
+</html>

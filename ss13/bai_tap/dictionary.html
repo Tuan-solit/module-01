@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Dictionary</h2>
+    <form action="">
+      <input type="text" id="word" />
+      <button onclick="search()">Search</button>
+    </form>
+    <script>
+      let english = ["fruit", "vegetable", "ball", "heart", "queen", "car"];
+      let vietNamese = [
+        "trái cây",
+        "rau củ",
+        "trái bóng",
+        "trái tim",
+        "nữ hoàng",
+        "ô tô",
+      ];
+      function search() {
+        let value = document.getElementById("word").value;
+        let result = "";
+        for (let i = 0; i < english.length; i++) {
+          if (value == english[i]) {
+            result = vietNamese[i];
+          }
+        }
+        if (result != "") {
+          alert(value + " - " + result);
+        } else {
+          alert("Not found");
+        }
+      }
+    </script>
+  </body>
+</html>

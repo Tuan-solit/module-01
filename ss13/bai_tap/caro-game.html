@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Tic-Tac-Toe</h2>
+    <p id="board"></p>
+    <button onclick="play()">Change Value</button>
+    <script>
+      let flag = true;
+      let b = document.getElementById("board");
+      let board = [];
+      let data = "";
+      for (let i = 0; i < 5; i++) {
+        board[i] = ["(.)", "(.)", "(.)", "(.)", "(.)"];
+      }
+      for (let i = 0; i < 5; i++) {
+        data += "<br>";
+        for (let j = 0; j < 5; j++) {
+          data += board[i][j] + "&ensp;";
+        }
+      }
+      b.innerHTML = data;
+      function play() {
+        let positionX = +prompt("Input x:");
+        let positionY = +prompt("Input y:");
+        let data = "";
+        if(board[positionX][positionY]=="(.)"){
+            if(flag){
+                board[positionX][positionY] = "&nbsp;" + "o" + "&nbsp;";
+                flag = !flag;
+            }else{
+                board[positionX][positionY] = "&nbsp;" + "x" + "&nbsp;";
+                flag = !flag;
+            }
+        }else{
+            alert("ô này đã đánh rồi");
+        }
+        for (let i = 0; i < 5; i++) {
+          data += "<br>";
+          for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&ensp;";
+          }
+        }
+        b.innerHTML = data;
+      }
+    </script>
+  </body>
+</html>

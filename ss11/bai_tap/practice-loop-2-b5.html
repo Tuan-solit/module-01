@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tienVay = parseInt(prompt("Nhập số tiền "));
+      let thang = parseInt(prompt("Nhập số tháng cho vay"));
+      let laiSuat = parseFloat(prompt("Nhập lãi suất hàng tháng"));
+      if (
+        !isNaN(tienVay) &&
+        !isNaN(thang) &&
+        !isNaN(laiSuat) &&
+        tienVay > 0 &&
+        thang > 0 &&
+        laiSuat > 0
+      ) {
+        console.log("Bắt đầu tính lãi kép qua từng tháng");
+        for (let i = 1; i <= thang; i++) {
+          let tienLai = tienVay * laiSuat;
+          tienVay += tienLai;
+          console.log("Tháng " + i + "tiền lãi là " + tienLai);
+        }
+        console.log(
+          "Tổng số tiền vay sau " + thang + " tháng là " + tienVay + "vnd",
+        );
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

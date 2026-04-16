@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhập 1 dãy 10 số khác nhau");
+      let array = input.split(",");
+      let max = array[0];
+      let index = 0;
+      if (array.length == 10) {
+        for (let i = 1; i < array.length; i++) {
+          if (array[i - 1] != array[i]) {
+            if (max < array[i]) {
+              max = array[i];
+              index = i;
+            }
+          } else {
+            alert("Các phần tử phải khác nhau");
+          }
+        }
+        console.log(
+          "Phần tử có giá trị lớn nhất là " + max + " vị trí ở " + index,
+        );
+      }else if(array.length<10){
+        alert("chưa đủ 10 số");
+      }else{
+        alert("chỉ nhập 10 số thôi");
+      }
+    </script>
+  </body>
+</html>
