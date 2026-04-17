@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isNumber(number) {
+        return !isNaN(number);
+      }
+      let number = +prompt("Nhập số");
+      if (isNumber(number)) {
+        alert("is number");
+      } else {
+        alert("not a number");
+      }
+    </script>
+  </body>
+</html>

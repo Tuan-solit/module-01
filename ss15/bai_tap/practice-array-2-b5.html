@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function minNumber(a, b, c) {
+        if (a < b && a < c) {
+          alert(a + " là số nhỏ nhất");
+        } else if (b < a && b < c) {
+          alert(b + " là số nhỏ nhất");
+        } else {
+          alert(c + " là số nhỏ nhất");
+        }
+      }
+      let a = parseInt(prompt("Nhập a"));
+      let b = parseInt(prompt("Nhập b"));
+      let c = parseInt(prompt("Nhập c"));
+      if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+        minNumber(a, b, c);
+      } else {
+        alert("Invalid input");
+      }
+    </script>
+  </body>
+</html>

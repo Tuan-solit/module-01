@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findStar(name) {
+        let array1 = [
+          "Polaris",
+          "Aldebaran",
+          "Deneb",
+          "Vega",
+          "Altair",
+          "Dubhe",
+          "Regulus",
+        ];
+        let array2 = [
+          "UrsaMinor",
+          "Taurus",
+          "Cygnus",
+          "Lyra",
+          "Aquila",
+          "UrsaMajor",
+          "Leo",
+        ];
+        for (let i = 0; i < array1.length; i++) {
+          if (name == array1[i]) {
+            return array2[i];
+          } else {
+            alert("Not found");
+          }
+        }
+      }
+      let nameStar = prompt("Nhập tên ngôi sao");
+      alert(findStar(nameStar));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = +prompt("Nhap so luong phan tu");
+        if (!isNaN(n)){
+            let array = new Array(n);
+            let count1 = 0;
+            let count2 = 0;
+            for (let i = 0; i < array.length; i++) {
+              array[i] = prompt("Nhap phan tu thu: " + i);
+              if (!isNaN(array[i])) {
+                count1++;
+              } else {
+                count2++;
+              }
+            }
+            if (count1 == array.length) {
+              alert("mang so");
+            } else if (count2 == array.length) {
+              alert("mang chu");
+            } else {
+              alert("mang hon hop");
+            }
+        }else{
+          alert("invalid input");
+        }
+    </script>
+  </body>
+</html>

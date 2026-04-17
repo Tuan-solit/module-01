@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkArray(arr) {
+        if (arr.length % 2 == 0) {
+          let count = 0;
+          for (let i = 0; i < arr.length / 2; i++) {
+            if (arr[i] ** 2 == arr[i + arr.length / 2]) {
+              count++;
+            } else {
+              return false;
+            }
+          }
+          if (count == arr.length / 2) {
+            return true;
+          }
+        } else {
+          return false;
+        }
+      }
+      if (checkArray([1, 2, 3, 1, 4, 9])) {
+        alert("ok");
+      } else {
+        alert("no");
+      }
+    </script>
+  </body>
+</html>
+l

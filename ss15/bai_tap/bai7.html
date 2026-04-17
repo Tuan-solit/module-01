@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("Nhap so luong phan tu");
+        if (!isNaN(n)){
+            let array = new Array(n);
+            let arrayNew = [];
+            for (let i = 0; i < array.length; i++) {
+                do{
+                    array[i] = prompt("Nhap phan tu thu: " + i+"\n"+"Luu y: 10 < so < 100 ");
+                }while(array[i]<=10||array[i]>=100);
+                let element = array[i]+"";
+                let array1 = element.split("");
+                if(array1[array1.length-1]>array1[array1.length-2]){
+                    arrayNew.push(array[i]);
+                }
+            }
+            alert(array+"\n"+arrayNew);
+        }else{
+          alert("invalid input");
+        }
+        // let n = +prompt("Nhap so luong phan tu");
+        // if (!isNaN(n)){
+        //     let array = new Array(n);
+        //     let arrayNew = [];
+        //     for (let i = 0; i < array.length; i++) {
+        //         do{
+        //             array[i] = prompt("Nhap phan tu thu: " + i+"\n"+"Luu y: 10 < so < 100 ");
+        //         }while(array[i]<=10||array[i]>=100);
+        //         let donVi = array[i]%10;
+        //         let chuc = array[i]/10;
+        //         if(donVi>chuc){
+        //             arrayNew.push(array[i]);
+        //         }
+        //     }
+        //     alert(array+"\n"+arrayNew);
+        // }else{
+        //   alert("invalid input");
+        // }
+    </script>
+</html>
