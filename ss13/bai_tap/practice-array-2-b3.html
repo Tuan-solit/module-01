@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = ["a", "5", "b", "8", "2", "z", "0", "!", "9"];
+      let count = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 0 && array[i] <= 9) {
+          count++;
+        }
+      }
+      console.log("Mang: " + array);
+      console.log("So ki tu (0-9) trong mang: " + count);
+    </script>
+  </body>
+</html>
