@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mobile {
+
+            constructor(name) {
+                this.name = name;
+                this.pin = 100;
+                this.isOn = true;
+                this.draftMessage = "";
+                this.sentMessage = [];
+                this.inbox = [];
+            }
+
+            consumePin() {
+                this.pin--;
+            }
+
+            checkStatus() {
+                if (this.isOn) {
+                    console.log(`Điện thoại ${this.name} đang bật`);
+                } else {
+                    console.log(`Điện thoại ${this.name} đang tắt`);
+                }
+                this.consumePin();
+            }
+
+            turnOn() {
+                this.isOn = true;
+                console.log(`${this.name} đã bật.`);
+            }
+
+            turnOff() {
+                this.isOn = false;
+                console.log(`${this.name} đã tắt.`);
+            }
+
+            charge() {
+                this.pin = 100;
+                console.log("Pin đã sạc đầy");
+            }
+
+            draftMessage(content) {
+                this.draftMessage = content;
+                console.log(`${this.name} đang soạn ${content}`);
+                this.consumePin();
+            }
+
+            receiveMessage(sender, content) {
+                this.inbox.push({ from: sender, message: content });
+            }
+
+            sendMessage(receiver, content) {
+                this.sentMessage.push(content);
+                receiver.receiveMessage(this.name, content);
+                console.log(`${this.name} đã gửi tin nhắn đến ${receiver.name}`);
+                this.consumePin();
+            }
+
+            showInbox() {
+                console.log(`Hộp thư đến của ${this.name}`);
+                this.inbox.forEach((msg, index) => {
+                    console.log(`${index + 1}. Từ ${msg.from} -Nội dung: ${msg.message}`);
+                })
+                this.consumePin();
+            }
+
+            showHistory() {
+                console.log(`Tin đã gửi của ${this.name}`);
+                this.sentMessage.forEach((msg, index) => {
+                    console.log(`${index + 1}. -Nội dung: ${msg}`);
+                })
+            }
+        }
+
+        let nokia = new Mobile("nokia");
+        let iphone = new Mobile("iphone");
+        nokia.checkStatus();
+        nokia.sendMessage(iphone, "Hello iphone");
+        iphone.showInbox();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Date{
+            constructor(day, month, year){
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            formatDate(){
+                return `${this.day}/${this.month}/${this.year}`;
+            }
+        }
+        let today = new Date(20,4,2026);
+        console.log(today.formatDate());
+
+        class Circle{
+            constructor(radius, color){
+                this.radius=radius;
+                this.color=color;
+            }
+            getArea(){
+                return Math.PI *`${this.radius}`*`${this.radius}`;
+            }
+        }
+        let circle = new Circle(3, "red");
+        console.log(circle.getArea());
+        
+    </script>
+</body>
+</html>

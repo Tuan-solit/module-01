@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            <input type="text" id="id" placeholder="Id of new product" /><br>
+            <input type="text" id="name" placeholder="Name of new product" /><br>
+            <input type="text" id="price" placeholder="Price of new product" /><br>
+            <button onclick="addProduct()">Add</button>
+        </p>
+    </div>
+    <p>
+        <input type="text" id="name1" placeholder="Name of product" />
+        <button onclick="searchProduct()">Search</button>
+    </p>
+    <p id="amount"></p>
+    <div id="display"></div>
+    <script>
+        class Products {
+            constructor(id, name, price) {
+                this.id = id;
+                this.name = name;
+                this.price = price;
+            }
+        }
+        let products = [new Products(11, "Iphone", "7000$"),
+        new Products(12, "SamSung", "6575$"),
+        new Products(23, "Nokia", "4712$"),
+        new Products(13, "Xiaomi", "5113$"),
+        ];
+        display();
+
+        function display() {
+            let table = `<table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>`;
+            for (let i = 0; i < products.length; i++) {
+                table += `<tr>
+            <td>${i + 1}</td>
+            <td>${products[i].id}</td>
+            <td>${products[i].name}</td>
+            <td>${products[i].price}</td>
+            <td><button onclick="updateProduct(${i})">Edit</button></td>
+            <td><button onclick="deleteProduct(${i})">Delete</button></td>
+        </tr>`;
+            }
+            table += `</table>`;
+            document.getElementById("display").innerHTML = table;
+            document.getElementById("amount").innerHTML =
+                products.length + "products";
+        }
+
+        function addProduct() {
+            let id = document.getElementById("id").value;
+            let name = document.getElementById("name").value;
+            let price = document.getElementById("price").value;
+            if (id != "" && name != "" && price != "") {
+                products.push(new Products(id, name, price));
+                display();
+                document.getElementById("id").value = "";
+                document.getElementById("name").value = "";
+                document.getElementById("price").value = "";
+            } else {
+                alert("Vui lòng nhập đủ thông tin trước khi thêm");
+            }
+        }
+
+        function searchProduct() {
+            let name = document.getElementById("name1").value;
+            if (name != "") {
+                let table = `<table border="1" style="border-collapse: collapse;">
+      <tr>
+          <th>STT</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Edit</th>
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>`;
+                let found = false;
+                for (let i = 0; i < products.length; i++) {
+                    if (name == products[i].name) {
+                        table += `<tr>
+            <td>${i + 1}</td>
+            <td>${products[i].id}</td>
+            <td>${products[i].name}</td>
+            <td>${products[i].price}</td>
+            <td><button onclick="updateProduct(${i})">Edit</button></td>
+            <td><button onclick="deleteProduct(${i})">Delete</button></td>
+        </tr>`;
+                        found = true;
+                        break;
+                    }
+                }
+                if (found) {
+                    let backButton = `<br><button onclick="display()">Quay lại danh sách tổng</button>`;
+                    document.getElementById("display").innerHTML = table + "</table>" + backButton;
+                } else {
+                    alert("Không có sản phẩm này");
+                }
+                document.getElementById("name1").value = "";
+            } else {
+                alert("Vui lòng nhập tên trước khi tìm");
+            }
+        }
+
+        function deleteProduct(index) {
+            if (confirm(`Bạn có muốn xóa sản phẩm ${products[index].name} không`)) {
+                products.splice(index, 1);
+                display();
+            }
+        }
+
+        function updateProduct(index) {
+            let updateName = prompt("Nhập thông tin mới", products[index].name);
+            let updatePrice = prompt("Nhập thông tin mới", products[index].price);
+            let updateProduct = new Products(products[index].id, updateName, updatePrice);
+            products.splice(index, 1, updateProduct);
+            display();
+        }
+    </script>
+</body>
+
+</html>

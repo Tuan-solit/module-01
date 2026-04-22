@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Apple {
+            constructor(id, weight) {
+                this.id = id;
+                this.weight = weight;
+            }
+
+            decreaseWeight() {
+                if (this.isEmpty()) {
+                    console.log(`Quả táo ${this.id} đã hết`);
+                } else {
+                    this.weight--;
+                }
+            }
+
+            isEmpty() {
+                return this.weight <= 0;
+            }
+        }
+
+        class Human {
+            constructor(name,gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            checkApple(apple) {
+                if (apple.isEmpty()) {
+                    console.log(`Quả số ${apple.id} này hết rồi, đổi quả khác`);
+                    return false;
+                } else {
+                    console.log(`Quả số ${apple.id} này còn ${apple.weight} , ăn thôi`);
+                    return true;
+                }
+            }
+
+            eat(apple) {
+                while (this.checkApple(apple)) {
+                    apple.decreaseWeight();
+                    this.weight++;
+                    console.log(`${this.name} vừa ăn 1 miếng táo. Cân nặng hiện tại của ${this.name} là ${this.weight}`);
+                }
+            }
+
+            say(text){
+                if(this.gender){
+                    console.log(`Hello Eva, tôi là ${this.name}, ${text}`);
+                }else{
+                    console.log(`Hi Adam, tôi là ${this.name}, ${text}`);
+                }
+            }
+        }
+
+        let apples = [new Apple(1, 10),
+        new Apple(2, 9),
+        new Apple(3, 11),
+        new Apple(4, 8),
+        new Apple(5, 0),
+        new Apple(6, 5)];
+        let adam = new Human("adam",true,60);
+        let eva = new Human("eva",false,45);
+        adam.eat(apples[3]);
+        eva.eat(apples[1]);
+        adam.say("Ăn táo không bạn");
+        eva.say("Ok bạn");
+    </script>
+</body>
+
+</html>

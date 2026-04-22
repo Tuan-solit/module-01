@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class SwitchButton{
+            constructor(id,status){
+                this.id=id;
+                this.status=status;
+                this.lamp=null;
+            }
+
+            turnOn(){
+                this.status=true;
+                console.log(`Công tắc ${this.id} đã gạt lên`);
+                if(this.lamp){
+                    this.lamp.turnOn();
+                }
+            }
+
+            turnOff(){
+                this.status=false;
+                console.log(`Công tắc ${this.id} đã gạt xuống`);
+                if (this.lamp) {
+                    this.lamp.turnOff();
+                }
+            }
+
+            connectToLamp(electricLamp){
+                this.lamp=electricLamp;
+                console.log(`Đã nối công tắc ${this.id} với đèn ${electricLamp.id}`);
+            }
+        }
+
+        class ElectricLamp{
+            constructor(id,status){
+                this.id=id;
+                this.status=false;
+            }
+
+            turnOn(){
+                this.status=true;
+                console.log(`Bóng đèn ${this.id} đang SÁNG...`);
+            }
+
+            turnOff() {
+                this.status = false;
+                console.log(`Bóng đèn ${this.id} đã TẮT.`);
+            }
+        }
+
+        let button1 = new SwitchButton(1,false);
+        let button2 = new SwitchButton(1,false);
+        let lamp1 = new ElectricLamp(1);
+        let lamp2 = new ElectricLamp(2);
+        let lamp3 = new ElectricLamp(3);
+        button1.connectToLamp(lamp1);
+        button1.turnOn();
+        button2.connectToLamp(lamp2);
+        for(let i = 0;i<10;i++){
+            button2.turnOn();
+            button2.turnOff();
+        }
+    </script>
+</body>
+</html>
